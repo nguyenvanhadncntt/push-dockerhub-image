@@ -14,16 +14,12 @@ jobs:
       #     docker build . --tag ghcr.io/nguyenvanhadncntt/helloword-image:latest
       #     docker push ghcr.io/nguyenvanhadncntt/helloword-image:latest
       - name: Log in to the Container registry
-        if: ${{ github.ref == 'refs/heads/main' }}
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GH_PAT }}
-      - name: Build and push Docker images
-        if: ${{ github.ref == 'refs/heads/main' }}
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          push: true
-          tags: ghcr.io/nguyenvanhadncntt/helloword-image:latest
+      - name: Build Inventory Image
+        run: |
+          docker build . --tag ghcr.io/nguyenvanhadncntt/helloword-image:latest
+          docker push ghcr.io/nguyenvanhadncntt/helloword-image:latest
