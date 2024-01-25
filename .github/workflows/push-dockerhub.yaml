@@ -19,8 +19,9 @@ jobs:
         # run: |
         #   docker build . --tag ghcr.io/nguyenvanhadncntt/push-dockerhub-image:latest
         #   docker push ghcr.io/nguyenvanhadncntt/push-dockerhub-image:latest
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v5
+        if: ${{ github.ref == 'refs/heads/main' }}
         with:
-          context: ./push-dockerhub-image
           push: true
+          labels: org.opencontainers.image.source=https://github.com/nguyenvanhadncntt/push-dockerhub-image
           tags: ghcr.io/nguyenvanhadncntt/push-dockerhub-image:latest
