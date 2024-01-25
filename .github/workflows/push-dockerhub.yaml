@@ -23,4 +23,4 @@ jobs:
         with:
           context: ./
           push: true
-          tags: ghcr.io/nashtech-garage/yas-cart:latest
+          tags: ghcr.io/nguyenvanhadncntt/push-dockerhub-image:latest
