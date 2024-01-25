@@ -17,5 +17,10 @@ jobs:
           password: ${{ secrets.GH_PAT }}
       - name: Build Inventory Image
         run: |
-          docker build . --tag ghcr.io/nguyenvanhadncntt/helloword-image:latest
-          docker push ghcr.io/nguyenvanhadncntt/helloword-image:latest
+          docker build . --tag ghcr.io/nguyenvanhadncntt/push-dockerhub-image:latest
+          docker push ghcr.io/nguyenvanhadncntt/push-dockerhub-image:latest
+        # uses: docker/build-push-action@v3
+        # with:
+        #   context: ./
+        #   push: true
+        #   tags: ghcr.io/nashtech-garage/yas-cart:latest
