@@ -21,6 +21,6 @@ jobs:
         #   docker push ghcr.io/nguyenvanhadncntt/push-dockerhub-image:latest
         uses: docker/build-push-action@v3
         with:
-          context: ./
+          context: ./push-dockerhub-image
           push: true
           tags: ghcr.io/nguyenvanhadncntt/push-dockerhub-image:latest
